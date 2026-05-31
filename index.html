@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AhaduHub — Professional SaaS & Agency Platform. Smart solutions for modern teams."
+    />
+    <title>AhaduHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+    <header class="navbar" id="navbar" role="banner">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+
+        <!-- Logo -->
+        <a href="#home" class="navbar__logo" aria-label="AhaduHub home">
+          <img src="img/logo.png" alt="Logo" class="logo__mark" aria-hidden="true"></img>
+          <span class="logo__wordmark">Ahadu<span style="color: var(--brand-blue);">Hub</span></span>
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul class="navbar__links" id="navLinks" role="list">
+          <li role="listitem">
+            <a href="#home"    class="nav-link active" data-link="home">Home</a>
+          </li>
+          <li role="listitem">
+            <a href="#about"   class="nav-link" data-link="about">About</a>
+          </li>
+          <li role="listitem">
+            <a href="#projects" class="nav-link" data-link="projects">Projects</a>
+          </li>
+          <li role="listitem">
+            <a href="#team"    class="nav-link" data-link="team">Team</a>
+          </li>
+          <li role="listitem">
+            <a href="#packages" class="nav-link" data-link="packages">Packages</a>
+          </li>
+          <li role="listitem">
+            <a href="#contact" class="nav-link" data-link="contact">Contact</a>
+          </li>
+        </ul>
+
+        <!-- CTA button (desktop) -->
+        <div class="navbar__cta">
+          <a href="#contact" class="btn-cta" id="ctaBtn">Get Started!</a>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="navbar__hamburger"
+          id="hamburgerBtn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+
+      </nav>
+
+      <!-- Mobile menu drawer -->
+      <div
+        class="mobile-menu"
+        id="mobileMenu"
+        role="dialog"
+        aria-label="Mobile navigation"
+        aria-hidden="true"
+      >
+        <ul class="mobile-menu__links" role="list">
+          <li role="listitem">
+            <a href="#home"     class="mobile-link active" data-mobile-link="home">Home</a>
+          </li>
+          <li role="listitem">
+            <a href="#about"    class="mobile-link"        data-mobile-link="about">About</a>
+          </li>
+          <li role="listitem">
+            <a href="#projects" class="mobile-link"        data-mobile-link="projects">Projects</a>
+          </li>
+          <li role="listitem">
+            <a href="#team"     class="mobile-link"        data-mobile-link="team">Team</a>
+          </li>
+          <li role="listitem">
+            <a href="#packages" class="mobile-link"        data-mobile-link="packages">Packages</a>
+          </li>
+          <li role="listitem">
+            <a href="#contact"  class="mobile-link"        data-mobile-link="contact">Contact</a>
+          </li>
+        </ul>
+
+        <div class="mobile-menu__cta">
+          <a href="#contact" class="btn-cta btn-cta--full">Get Started</a>
+        </div>
+      </div>
+    </header>
+    <!-- ══════════════════════════ END NAVBAR ══════════════════════════ -->
+
+
+    <!-- ═══════════ Demo page body (scroll content only) ═════════════ -->
+    <main>
+      <section class="demo-section demo-hero" id="home">
+        <div class="sub-headline"><p class="sub-headline__text">A Developer Community & Innovation Hub</p></div>
+        <h1 class = "headline">WHERE IDEAS BECOME PRODUCTS</h1>
+        <div class="desc-content">
+          <p>A full-stack development team focused on building scalable, user-centered web applications, working on real-world projects, and growing into a development hub where reliable digital solutions are delivered.</p>
+        </div>
+        <section class="buttons">
+          <a href="#about" class="btn-about">Learn More About Us</a>
+          <a href="#projects" class="btn-projects">Explore Our Work <span class="btn-arrow">&#x2192;</span></a>
+        </section>
+        <div class = "card-container">
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">
+                <i data-lucide="layers"></i>
+              </div>
+              <h3>Real-World Projects</h3>
+            </div>
+            <p>Build practical applications that solve real-world problems.</p>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">
+                <i data-lucide="file-code-corner"></i>
+              </div>
+              <h3>Clean & Scalable Code</h3>
+            </div>
+            <p>Structured, maintainable code built for performance and scalability.</p>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">
+                <i data-lucide="monitor-smartphone"></i>
+              </div>
+              <h3>Responsive Designs</h3>
+            </div>
+            <p>Seamless user experience across mobile, tablet, and desktop devices.</p>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">
+                <i data-lucide="zap"></i>
+              </div>
+              <h3>Fast & Reliable Delivery</h3>
+            </div>
+            <p>We deliver efficient solutions with speed, precision, and reliability.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════ ABOUT SECTION STARTS ═══════════════════════════ -->
+      <section id="about" class="demo-section demo-about">
+        <div class="container-about about-hero-grid">
+          
+          <div class="about-text-column">
+            <div class="text-slider">
+              
+              <div class="text-item active">
+                <div class="status-pill about-tag">
+                  ABOUT US
+                </div>
+                <h2 class="about-h1">BUILDING RELIABLE DIGITAL SYSTEMS FOR INSTITUTIONS</h2>
+                <div class="about-paragraphs">
+                  <p>AhaduHub is a web development team focused on transforming outdated websites into modern, user-centered platforms.</p>
+                  <p>We design and build clean, responsive, and scalable interfaces tailored for institutions and organizations.</p>
+                  <p>Our goal is to deliver reliable digital solutions that improve clarity, engagement, and credibility.</p>
+                </div>
+              </div>
+              
+              <div class="text-item">
+                <div class="status-pill about-tag">
+                  <span class="status-dot"></span> OUR TEAM
+                </div>
+                <h2 class="about-h1">A growing team solving real-world problems</h2>
+                <div class="about-paragraphs">
+                  <p>We are a growing team of developers focused on real-world problem solving through modern technologies.</p>
+                  <p>Our work is driven by continuous learning, collaboration, and hands-on development across both frontend and backend systems.</p>
+                  <p>Our goal is to build not only strong products, but also a strong foundation for innovation.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="about-actions-row">
+              <div class="about-slider-nav">
+                <div class="indicators">
+                  <span class="dot active" onclick="jumpToSlide(0)"></span>
+                  <span class="dot" onclick="jumpToSlide(1)"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-area">
+            <div class="image-group active">
+              <div class="card-back">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000" alt="Back Image" />
+              </div>
+              <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000" alt="Front Image" />
+              </div>
+            </div>
+
+            <div class="image-group">
+              <div class="card-back">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000" alt="Back Image" />
+              </div>
+              <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000" alt="Front Image" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tech-stack">
+          <p class="section-label">OUR TECH STACK</p>
+          <div class="marquee">
+            <div class="marquee-content">
+              <span class="tags"><i data-lucide="zap" style="color: var(--brand-blue);"></i> FastAPI</span>
+              <span class="tags"><i class="fas fa-database"></i> MongoDB</span>
+              <span class="tags"><i class="fab fa-google"></i> Flutter</span>
+              <span class="tags"><i class="fab fa-python"></i> Django</span>
+              <span class="tags"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tags"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tags"><i class="fab fa-react"></i> React</span>
+              <span class="tags"><i class="fab fa-python"></i> Python</span>
+              <span class="tags"><i data-lucide="zap" style="color: var(--brand-blue);"></i> FastAPI</span>
+              <span class="tags"><i class="fas fa-database"></i> MongoDB</span>
+              <span class="tags"><i class="fab fa-google"></i> Flutter</span>
+              <span class="tags"><i class="fab fa-python"></i> Django</span>
+              <span class="tags"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tags"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tags"><i class="fab fa-react"></i> React</span>
+              <span class="tags"><i class="fab fa-python"></i> Python</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-section-header">
+          <div class="status-pill process-tag">
+            <span class="status-dot"></span> PROCESS
+          </div>
+          <h2 class="process-main-title">A Simple Process to Improve <br />Your Website</h2>
+          <p class="process-main-subtitle">A clear, structured approach to identify problems and deliver effective solutions.</p>
+        </div>
+
+        <div class="process-timeline-wrapper">
+          <div class="process-container">
+            
+            <div class="process-step">
+              <div class="icon-wrapper">
+                <div class="icon-box">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="line"></div>
+              </div>
+              <div class="process-card">
+                <span class="step-number">STEP 01</span>
+                <h3>Analyze & Understand</h3>
+                <p>We review your current website and identify key usability and design issues.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="icon-wrapper">
+                <div class="icon-box">
+                  <i class="fas fa-th-large"></i>
+                </div>
+                <div class="line"></div>
+              </div>
+              <div class="process-card">
+                <span class="step-number">STEP 02</span>
+                <h3>Plan & Structure</h3>
+                <p>We design a clear layout and user flow tailored to your audience.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="icon-wrapper">
+                <div class="icon-box">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="line"></div>
+              </div>
+              <div class="process-card">
+                <span class="step-number">STEP 03</span>
+                <h3>Design & Develop</h3>
+                <p>We build a responsive, clean, and modern interface using best practices.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="icon-wrapper">
+                <div class="icon-box">
+                  <i class="fas fa-rocket"></i>
+                </div>
+              </div>
+              <div class="process-card">
+                <span class="step-number">STEP 04</span>
+                <h3>Deliver & Improve</h3>
+                <p>We launch your site and ensure it performs smoothly across all devices.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    <!-- ══════════════════════════ END DEMO ═══════════════════════════ -->
+     <section id="projects" class="demo-section">
+        <h2>Projects Section (Coming Soon)</h2>
+      </section>
+      <section id="team" class="demo-section">
+        <h2>Team Section (Coming Soon)</h2>
+      </section>
+      <section id="packages" class="demo-section">
+        <h2>Packages Section (Coming Soon)</h2>
+      </section>
+      <section id="contact" class="demo-section">
+        <h2>Contact Section (Coming Soon)</h2>
+      </section>
+
+
+    <script src="js/hero+navbar.js"></script>
+    <script src="js/about.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

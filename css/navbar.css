@@ -1,0 +1,376 @@
+/* ── Navbar Shell ───────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  /* ── At-top state ── */
+  --nb-width:   100%;
+  --nb-left:    0%;
+  --nb-mt:      0px;
+  --nb-radius:  0px;
+  --nb-shadow:  none;
+  --nb-bg:      #ffffff;
+  --nb-border:  transparent;
+
+  /* Apply token values */
+  width: var(--nb-width);
+  margin-top: var(--nb-mt);
+  left: calc((100% - var(--nb-width)) / 2);
+
+  background: var(--nb-bg);
+  border-radius: var(--nb-radius);
+  box-shadow: var(--nb-shadow);
+  border: 1px solid var(--nb-border);
+
+  transition:
+    width          var(--transition),
+    margin-top     var(--transition),
+    left           var(--transition),
+    border-radius  var(--transition),
+    box-shadow     var(--transition),
+    background     var(--transition),
+    border-color   var(--transition);
+}
+
+/* ── Scrolled (floating pill) state ─────────────────────────── */
+.navbar.scrolled {
+  --nb-width:   84%;
+  --nb-mt:      20px;
+  --nb-radius:  var(--radius-pill);
+  --nb-shadow:  var(--shadow-float);
+  --nb-bg:      #ffffff;
+  --nb-border:  #e5e7eb;
+
+  width: var(--nb-width);
+  margin-top: var(--nb-mt);
+  left: calc((100% - var(--nb-width)) / 2);
+  border-radius: var(--nb-radius);
+  box-shadow: var(--nb-shadow);
+  border-color: var(--nb-border);
+}
+
+
+/* ── Inner row (logo + links + cta) ─────────────────────────── */
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  height: var(--nav-height);
+  padding: 0 60px;
+}
+
+
+/* ── Logo ───────────────────────────────────────────────────── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.logo__mark {
+  width: 45px;
+  height: 55px;
+  background: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition);
+}
+
+.logo__wordmark {
+  font-family: var(--font-sora);
+  font-weight: 700;
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  transition: color var(--transition);
+}
+
+
+/* ── Desktop Nav Links ──────────────────────────────────────── */
+.navbar__links {
+  display: flex;
+  align-items: right;
+  gap: 6px;
+  margin-right: 20px;
+}
+
+.nav-link {
+  font-family: var(--font-sora);
+  font-size: clamp(13px, 2vw, 15px);
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: color var(--transition);
+  letter-spacing: -0.01em;
+}
+
+/* Underline indicator (hidden by default) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -0.3px;
+  left: 10px;
+  right: 10px;
+  height: 2.8px;
+  background: var(--brand-blue);
+  border-radius: 16px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--brand-blue);
+}
+
+/* Active state */
+.nav-link.active {
+  color: var(--brand-blue);
+  font-size: 18px;    
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+
+/* ── CTA Button (desktop) ───────────────────────────────────── */
+.navbar__cta {
+  flex-shrink: 0;
+}
+
+.btn-cta {
+  display: inline-block;
+  font-family: var(--font-sora);
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--brand-blue);
+  padding: 9px 22px;
+  border-radius: 50px;
+  border: 2px solid var(--brand-blue);
+  cursor: pointer;
+  transition:
+    background  var(--transition),
+    color       var(--transition),
+    transform   var(--transition),
+    box-shadow  var(--transition);
+  letter-spacing: -0.01em;
+}
+
+.btn-cta:hover {
+  background: var(--brand-blue-dk);
+  border-color: var(--brand-blue-dk);
+  transform: translateY(-1px);
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.30);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+/* ── Hamburger ──────────────────────────────────────────────── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 6px;
+  transition: background var(--transition);
+}
+
+.navbar__hamburger:hover {
+  background: #f1f5f9;
+}
+
+.hamburger__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition:
+    transform     var(--transition),
+    opacity       var(--transition),
+    width         var(--transition);
+  transform-origin: center;
+}
+
+/* Open state — animate into X */
+.navbar__hamburger.open .hamburger__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.open .hamburger__bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.navbar__hamburger.open .hamburger__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ── Mobile Menu Drawer ─────────────────────────────────────── */
+.mobile-menu {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height  350ms ease-out,
+    opacity     280ms ease-out,
+    padding     280ms ease-out;
+  padding: 0 20px;
+  background: #ffffff;
+  border-top: 1px solid transparent;
+}
+
+.mobile-menu.open {
+  max-height: 480px;
+  opacity: 1;
+  padding: 12px 20px 20px;
+  border-top-color: #f0f0f0;
+}
+
+/* When scrolled, keep drawer corners aligned with pill */
+.navbar.scrolled .mobile-menu {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Mobile link */
+.mobile-link {
+  display: block;
+  font-family: var(--font-sora);
+  font-size: clamp(13px, 2vw, 15px);
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: color var(--transition), background var(--transition);
+}
+
+.mobile-link::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 14px;
+  width: 0;
+  height: 2px;
+  background: var(--brand-blue);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.mobile-link:hover {
+  color: var(--brand-blue);
+  background: #f0f5ff;
+}
+
+.mobile-link.active {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.mobile-link.active::after {
+  width: calc(100% - 28px);
+}
+
+.mobile-menu__cta {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-cta--full {
+  width: 100%;
+  text-align: center;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════ */
+  /* ─── Small mobile (≤ 480px) ──────────────────────────────── */
+@media (max-width: 768px) {
+  body {
+    background: red;
+  }
+
+  .navbar__links, .navbar__cta{
+    display: none;
+  }
+
+  .navbar{
+    width: 100%;
+  }
+
+  .navbar__hamburger{
+    display: flex;
+  }
+
+  .navbar__inner {
+    padding: 0 18px;
+  }
+
+  .logo__wordmark {
+    font-size: 15px;
+  }
+
+  .navbar.scrolled {
+    --nb-width: 96%;
+    --nb-mt: 14px;
+  }
+}
+
+/* ─── Tablet & Mobile (≤ 900px) ──────────────────────────── */
+@media (min-width: 768px) and (max-width: 1025px) {
+  body{
+    background: BLUE;
+  }
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar{
+    width: 100%;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar.scrolled {
+    --nb-width: 90%;
+  }
+}

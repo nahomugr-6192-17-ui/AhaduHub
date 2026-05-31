@@ -1,0 +1,482 @@
+/* ============================================================
+   AhaduHub — Premium About & Process Sections Styling
+   ============================================================ */
+
+.demo-about {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+}
+
+.container-about {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- Hero Grid Layout --- */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 54px;
+  margin-bottom: -50px;
+}
+
+/* --- Left Text Content Slider --- */
+.about-text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.text-slider {
+  position: relative;
+  width: 100%;
+}
+
+.text-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              visibility 0.6s;
+}
+
+.text-item.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- Status Pills / Tags --- */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(30, 107, 255, 0.2);
+  background: var(--bg-white) ;
+  color: var(--brand-blue);
+  font-size: clamp(11px, 1.5vw, 12px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+  width: max-content;
+  transition: var(--transition);
+}
+
+.status-pill:hover{
+  border-color: var(--brand-blue);
+  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.08);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.about-h1 {
+  font-family: var(--font-sora);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+  color: var(--brand-blue);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.about-paragraphs p {
+  color: var(--text-secondary);
+  font-family: var(--font-inter);
+  line-height: 1.7;
+  font-size: clamp(13.5px, 2vw, 17px);
+  margin-bottom: 6px;
+}
+
+.about-paragraphs p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Action Control Row (Button + Arrows Side-by-Side) --- */
+.about-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.about-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e6bff;
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 14px rgba(30, 107, 255, 0.2);
+}
+
+.about-primary-btn:hover {
+  background-color: #0747d8;
+  transform: translateY(-2px);
+}
+
+.about-slider-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.indicators { 
+    display: flex; 
+    gap: 8px;  
+    justify-content: flex-start; /* Alignment */
+}
+
+.dot { 
+    width: 30px; 
+    height: 8px; 
+    background: #e5e7eb; /* Gray for inactive */
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+/* Blue for active - this is what "moves" */
+.dot.active { 
+    background: #3b82f6; 
+    width: 45px; /* Makes the active dot longer like the video */
+}
+
+/* --- Right Side Premium Image Stack --- */
+.hero-image-area {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-group {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              visibility 0.8s;
+}
+
+.image-group.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.card-back {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  right: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%) contrast(60%);
+}
+
+.card-front {
+  position: absolute;
+  width: 91%;
+  height: 91%;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: var(--shadow-float);
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Tech Stack Section --- */
+.tech-stack {
+  padding: 60px 0 100px;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.15em;
+  margin-bottom: 5px;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee::before, .marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
+.marquee::after { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
+
+.marquee-content {
+  display: inline-flex;
+  gap: 16px;
+  animation: scrollMarquee 35s linear infinite;
+  padding: 20px 100px; /* To prevent content from being cut off by the fade effect */
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-white);
+  transition: all 0.3s ease;
+}
+
+.tags i {
+  color: var(--brand-blue);
+  font-size: 16px;
+}
+
+.tags:hover {
+  border-color: var(--brand-blue);
+  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.08);
+  transform: translateX(4px) scale(1.05);
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- Process Header Styling --- */
+.process-section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+
+.process-tag {
+  margin-bottom: 16px;
+}
+
+.process-main-title {
+  font-family: "Sora", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.process-main-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Process Vertical Timeline --- */
+.process-timeline-wrapper {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.process-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.process-step {
+  display: flex;
+  gap: 32px;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  border: 1px solid #cddbfe;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.icon-box i {
+  color: #1e6bff;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.line {
+  width: 2px;
+  flex-grow: 1;
+  background-color: #e5e7eb;
+  margin: 8px 0;
+}
+
+.process-card {
+  flex: 1;
+  padding: 28px;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  background: #ffffff;
+  margin-bottom: 40px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+}
+
+.process-step:last-child .process-card {
+  margin-bottom: 0;
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e6bff;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.process-card h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.process-card p {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- Interactive Timeline Hovers --- */
+.process-step:hover .icon-box {
+  background: #1e6bff;
+  border-color: #1e6bff;
+  box-shadow: 0 10px 20px rgba(30, 107, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.process-step:hover .icon-box i {
+  color: #ffffff;
+}
+
+.process-step:hover .process-card {
+  border-color: rgba(30, 107, 255, 0.2);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.04);
+  transform: translateX(6px);
+}
+
+/* ── Responsive Tablet & Mobile Media Queries ── */
+@media (max-width: 992px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  .about-text-column {
+    align-items: center;
+  }
+  .status-pill {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-actions-row {
+    justify-content: center;
+  }
+  .hero-image-area {
+    height: 400px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .about-h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-global-wrapper {
+    padding: 60px 0;
+  }
+  .about-h1 {
+    font-size: 28px;
+  }
+  .process-main-title {
+    font-size: 26px;
+  }
+  .hero-image-area {
+    height: 320px;
+  }
+  .process-step {
+    gap: 16px;
+  }
+  .process-card {
+    padding: 20px;
+  }
+}
