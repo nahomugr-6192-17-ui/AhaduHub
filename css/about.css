@@ -313,16 +313,15 @@
   font-family: "Sora", sans-serif;
   font-size: 38px;
   font-weight: 600;
-  color: var(--brand-blue);
+  color: #111111;
   line-height: 1.25;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
-  text-transform: uppercase;
 }
 
 .process-main-subtitle {
   font-size: 16px;
-  color: var(--text-secondary);
+  color: #6b7280;
   line-height: 1.6;
 }
 
