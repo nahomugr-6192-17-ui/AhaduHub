@@ -4,7 +4,7 @@
 
 .demo-about {
   width: 100%;
-  padding: 100px 0;
+  padding: 90px 0 0 0;
   position: relative;
 }
 
@@ -355,6 +355,8 @@
 
 .process-container {
   display: flex;
+  position: relative;
+  justify-content: space-between;
   flex-direction: row;
   gap: 30px;
   position: relative;
@@ -365,11 +367,49 @@
 
 .process-step {
   display: flex;
-  gap: 32px;
+  flex-direction: column;
+  padding: 12px;
+  align-items: center;
+  gap: 40px;
   flex: 1;
   position: relative;
 }
 
+.timeline-track{
+  position:absolute;
+  bottom: 19px;
+  left:11%;
+  right:11%;
+  height: 2px;
+  background:#dbe7ff;
+  z-index:1;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 22.4px;
+  background: #fff;
+  border: 2px solid var(--brand-blue);
+  border-radius: 50%;
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: rgba(30,107,255,.15);
+}
+
+.process-step:hover .timeline-dot {
+  background: var(--brand-blue);
+  box-shadow: 0 0 0 8px rgba(30, 107, 255, 0.2), 0 0 15px var(--brand-blue);
+}
 
 .icon-box {
   width: 45px;
@@ -467,32 +507,6 @@
 .process-step:hover .icon-box{
   border: 1px solid var(--bg-white);
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
-}
-
-.process-step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  
-  /* Start exactly at the right edge of the current card */
-  left: 100%; 
-  
-  /* Spans exactly the width of the gap between your cards */
-  width: 40px; 
-  
-  /* Align vertically with the center of the icon 
-     (24px card padding + 22.5px half-icon height) */
-  top: 106px; 
-  
-  /* Line thickness and style */
-  height: 2px; 
-  background-color: hsla(219, 100%, 56%, 0.601); /* Matches your card borders */
-  
-  /* Optional: Make it dashed instead of solid */
-  /* background: transparent;
-  border-top: 2px dashed rgba(30, 107, 255, 0.4); */
-  
-  z-index: 1;
-  pointer-events: none;
 }
 
 /* ── Responsive Tablet & Mobile Media Queries ── */

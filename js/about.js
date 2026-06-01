@@ -110,7 +110,7 @@
 
     let isTouching = false;
     let isDragging = false;
-    let autoScrollSpeed = 0.6; // Pixels per frame
+    let autoScrollSpeed = 0.07; // Pixels per frame
     
     let startX;
     let scrollLeft;
