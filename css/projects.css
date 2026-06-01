@@ -1,0 +1,271 @@
+/* ============================================================
+   AhaduHub — Projects Section Styles
+   ============================================================ */
+
+.projects-section {
+  padding: 100px 0;
+  background-color: #f8faff;
+  overflow: hidden; /* Prevents horizontal scrollbar on the whole page */
+}
+
+.projects-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  margin-bottom: 16px;
+}
+
+.projects-h2 {
+  font-family: var(--font-sora);
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* --- Navigation Arrows --- */
+.nav-arrows {
+  display: inline-flex;
+  gap: 12px;
+}
+
+.custom-nav {
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-nav:hover {
+  background: var(--brand-blue);
+  color: #ffffff;
+  border-color: var(--brand-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.2);
+}
+
+/* --- The Swiper (Horizontal Scroll Area) --- */
+.projects-swiper {
+  width: 100%;
+  padding: 40px 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.projects-swiper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.swiper-wrapper {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  /* Add padding to the left/right so the first/last cards can center nicely */
+  padding: 0 calc(50vw - 350px); 
+}
+
+/* --- Project Cards --- */
+.project-card {
+  flex-shrink: 0;
+  width: 700px;
+  height: 420px;
+  padding: 50px;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  opacity: 0.5;
+  transform: scale(0.95);
+  scroll-snap-align: center;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Active State */
+.project-card.display {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  border-color: rgba(30, 107, 255, 0.3);
+  z-index: 10;
+}
+
+/* Expanding Underline on Hover/Active */
+.project-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 30px; 
+  right: 30px;
+  height: 4px;
+  background: var(--brand-blue);
+  border-radius: 10px 10px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card.display::after,
+.project-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- Card Content --- */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-type {
+  color: var(--brand-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-icons i {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  transition: 0.3s;
+}
+
+.project-card:hover .card-icons i {
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.project-card h3 {
+  font-family: var(--font-sora);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.project-desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Tech Tags */
+.tech-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.TT {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: 0.3s;
+}
+
+.project-card:hover .TT {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+/* --- Footer & Indicators --- */
+.projects-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.projects-indicators {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.projects-indicators .dot {
+  width: 30px;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects-indicators .dot.active {
+  background: var(--brand-blue);
+  width: 45px;
+}
+
+.view-projects-btn {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.view-projects-btn:hover {
+  background-color: var(--brand-blue-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.2);
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+  .swiper-wrapper {
+    padding: 0 20px; /* Remove the centering trick for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .project-card {
+    width: 85vw;
+    height: auto;
+    min-height: 380px;
+    padding: 30px;
+  }
+  
+  .project-card h3 {
+    font-size: 24px;
+  }
+  
+  .tech-tags {
+    flex-wrap: wrap;
+  }
+}

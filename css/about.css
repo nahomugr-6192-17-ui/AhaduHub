@@ -156,6 +156,10 @@
     width: 45px; /* Makes the active dot longer like the video */
 }
 
+.dot:hover {
+  cursor: pointer;
+}
+
 /* --- Right Side Premium Image Stack --- */
 .hero-image-area {
   position: relative;
@@ -222,7 +226,7 @@
 
 /* --- Tech Stack Section --- */
 .tech-stack {
-  padding: 60px 0 100px;
+  margin: 100px 0 60px;
   text-align: center;
   width: 100%;
   overflow: hidden;
@@ -241,9 +245,24 @@
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
 }
 
-.marquee::before, .marquee::after {
+.marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee:active {
+  cursor: grabbing;
+}
+
+.marquee-wrapper{
+  position: relative;
+}
+
+.marquee-wrapper::before, .marquee-wrapper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -252,13 +271,15 @@
   z-index: 3;
   pointer-events: none;
 }
-.marquee::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
-.marquee::after { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
+
+.marquee-wrapper::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
+.marquee-wrapper::after { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
 
 .marquee-content {
   display: inline-flex;
   gap: 16px;
-  animation: scrollMarquee 35s linear infinite;
+  animation: scrollMarquee 165s linear infinite;
+  width: max-content;
   padding: 20px 100px; /* To prevent content from being cut off by the fade effect */
 }
 
@@ -301,7 +322,7 @@
 .process-section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 60px;
+  margin: 100px auto 60px;
   padding: 0 24px;
 }
 
@@ -380,6 +401,7 @@
   height: 100%; 
   display: flex;
   flex-direction: column;
+  text-align: left;
   
   z-index: 2;
 }

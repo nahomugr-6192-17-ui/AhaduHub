@@ -7,6 +7,7 @@
       name="description"
       content="AhaduHub — Professional SaaS & Agency Platform. Smart solutions for modern teams."
     />
+
     <title>AhaduHub</title>
 
     <!-- Google Fonts -->
@@ -22,6 +23,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/projects.css">
 
   </head>
   <body>
@@ -234,11 +236,12 @@
 
         <div class="tech-stack">
           <p class="section-label">OUR TECH STACK</p>
-          <div class="marquee">
-            <div class="marquee-content">
-              <span class="tags"><i data-lucide="zap" style="color: var(--brand-blue);"></i> FastAPI</span>
-              <span class="tags"><i class="fas fa-database"></i> MongoDB</span>
-              <span class="tags"><i class="fab fa-google"></i> Flutter</span>
+          <div class="marquee-wrapper">
+            <div class="marquee">
+              <div class="marquee-content">
+                <span class="tags"><i data-lucide="zap" style="color: var(--brand-blue);"></i> FastAPI</span>
+                <span class="tags"><i class="fas fa-database"></i> MongoDB</span>
+                <span class="tags"><i class="fab fa-google"></i> Flutter</span>
               <span class="tags"><i class="fab fa-python"></i> Django</span>
               <span class="tags"><i class="fab fa-node-js"></i> Node.js</span>
               <span class="tags"><i class="fab fa-js"></i> JavaScript</span>
@@ -348,10 +351,99 @@
           </div>
         </div>
       </section>
-    <!-- ══════════════════════════ END DEMO ═══════════════════════════ -->
-     <section id="projects" class="demo-section">
-        <h2>Projects Section (Coming Soon)</h2>
+    <!-- ══════════════════════════ ABOUT SECTION END ═══════════════════════════ -->
+
+     <!-- ══════════════════════════ PROJECTS SECTION END ═══════════════════════════ -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <div class="projects-header-wrapper">
+            <div class="projects-title-area">
+              <div class="status-pill section-tag">
+                <span class="status-dot"></span> OUR WORK
+              </div>
+              <h2 class="projects-h2">Featured Projects</h2>
+            </div>
+            
+            <div class="nav-arrows">
+              <button class="custom-nav prev-project-btn" aria-label="Previous Project">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <button class="custom-nav next-project-btn" aria-label="Next Project">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="swiper" class="projects-swiper">
+          <div id="cardWrapper" class="swiper-wrapper">
+            
+            <div class="project-card display">
+              <div class="card-top">
+                <span class="project-type">Web Development & Translation</span>
+                <div class="card-icons">
+                  <i class="fas fa-external-link-alt"></i>
+                </div>
+              </div>
+              <h3>Ethio-Nug Digital Platform</h3>
+              <p class="project-desc">A modernized web interface and integrated FAQ system designed for clarity and user engagement. Includes comprehensive localized content.</p>
+              <div class="tech-tags">
+                <span class="TT">React</span>
+                <span class="TT">Figma</span>
+                <span class="TT">UI/UX</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="card-top">
+                <span class="project-type">Utility Application</span>
+                <div class="card-icons">
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+              <h3>Secure Password Generator</h3>
+              <p class="project-desc">A lightweight, highly responsive local application designed to generate complex, secure passwords on the fly with customizable constraints.</p>
+              <div class="tech-tags">
+                <span class="TT">JavaScript</span>
+                <span class="TT">HTML/CSS</span>
+                <span class="TT">Git</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="card-top">
+                <span class="project-type">System Architecture</span>
+                <div class="card-icons">
+                  <i class="fas fa-database"></i>
+                </div>
+              </div>
+              <h3>Information Retrieval System</h3>
+              <p class="project-desc">An academic-grade search engine model utilizing inverted indexes, tf-idf weighting, and Porter stemming rules for document collection processing.</p>
+              <div class="tech-tags">
+                <span class="TT">Java</span>
+                <span class="TT">Algorithms</span>
+                <span class="TT">Data Structures</span>
+              </div>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="container projects-footer">
+          <div class="indicators projects-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          
+          <a href="#projects" class="view-projects-btn">
+            View All Projects <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </section>
+    <!-- ══════════════════════════ PROJECTS SECTION END ═══════════════════════════ -->
+
+
       <section id="team" class="demo-section">
         <h2>Team Section (Coming Soon)</h2>
       </section>
@@ -365,6 +457,7 @@
 
     <script src="js/hero+navbar.js"></script>
     <script src="js/about.js"></script>
+    <script src="js/projects.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
