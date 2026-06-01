@@ -311,48 +311,48 @@
 
 .process-main-title {
   font-family: "Sora", sans-serif;
-  font-size: 38px;
-  font-weight: 600;
-  color: #111111;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 500;
+  color: var(--brand-blue);
   line-height: 1.25;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .process-main-subtitle {
   font-size: 16px;
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 /* --- Process Vertical Timeline --- */
 .process-timeline-wrapper {
   width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
   padding: 0 24px;
 }
 
 .process-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 30px;
   position: relative;
+  width: 90%;
+  align-items: stretch;
+  margin: 0 auto;
 }
 
 .process-step {
   display: flex;
   gap: 32px;
+  flex: 1;
+  position: relative;
 }
 
-.icon-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .icon-box {
-  width: 56px;
-  height: 56px;
+  width: 45px;
+  height: 45px;
   border: 1px solid #cddbfe;
   border-radius: 14px;
   display: flex;
@@ -369,22 +369,27 @@
   transition: color 0.3s ease;
 }
 
-.line {
-  width: 2px;
-  flex-grow: 1;
-  background-color: #e5e7eb;
-  margin: 8px 0;
-}
-
 .process-card {
-  flex: 1;
-  padding: 28px;
-  border: 1px solid #f1f5f9;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid rgba(30, 107, 255, 0.2);
   border-radius: 20px;
   background: #ffffff;
-  margin-bottom: 40px;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+  box-shadow: 0 4px 14px rgba(30, 107, 255, 0.1);
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  
+  z-index: 2;
+}
+
+.process-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 16px;
+  margin-bottom: 12px;
 }
 
 .process-step:last-child .process-card {
@@ -402,7 +407,7 @@
 
 .process-card h3 {
   font-family: "Sora", sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 600;
   color: #111111;
   margin-bottom: 10px;
@@ -419,7 +424,6 @@
   background: #1e6bff;
   border-color: #1e6bff;
   box-shadow: 0 10px 20px rgba(30, 107, 255, 0.2);
-  transform: translateY(-2px);
 }
 
 .process-step:hover .icon-box i {
@@ -427,9 +431,46 @@
 }
 
 .process-step:hover .process-card {
-  border-color: rgba(30, 107, 255, 0.2);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.04);
+  border-color: var(--bg-white);
+  box-shadow: var(--shadow-float);
   transform: translateX(6px);
+  background-color: var(--brand-blue);
+}
+.process-step:hover .process-card h3,
+.process-step:hover .process-card p,
+.process-step:hover .step-number {
+  color: var(--bg-white);
+}
+
+.process-step:hover .icon-box{
+  border: 1px solid var(--bg-white);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+}
+
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  
+  /* Start exactly at the right edge of the current card */
+  left: 100%; 
+  
+  /* Spans exactly the width of the gap between your cards */
+  width: 40px; 
+  
+  /* Align vertically with the center of the icon 
+     (24px card padding + 22.5px half-icon height) */
+  top: 106px; 
+  
+  /* Line thickness and style */
+  height: 2px; 
+  background-color: hsla(219, 100%, 56%, 0.601); /* Matches your card borders */
+  
+  /* Optional: Make it dashed instead of solid */
+  /* background: transparent;
+  border-top: 2px dashed rgba(30, 107, 255, 0.4); */
+  
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* ── Responsive Tablet & Mobile Media Queries ── */
