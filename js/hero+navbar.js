@@ -7,10 +7,10 @@
   "use strict";
 
   /* ── Element references ──────────────────────────────────────── */
-  const navbar      = document.getElementById("navbar");
-  const hamburger   = document.getElementById("hamburgerBtn");
-  const mobileMenu  = document.getElementById("mobileMenu");
-  const navLinks    = document.querySelectorAll(".nav-link");
+  const navbar = document.getElementById("navbar");
+  const hamburger = document.getElementById("hamburgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const navLinks = document.querySelectorAll(".nav-link");
   const mobileLinks = document.querySelectorAll(".mobile-link");
 
   /* ── Scroll threshold (px before navbar "floats") ───────────── */
@@ -20,7 +20,7 @@
      1. SCROLL — shrink navbar into floating pill
   ─────────────────────────────────────────────────────────────── */
   let lastScrollY = window.scrollY;
-  let ticking     = false;
+  let ticking = false;
 
   function onScroll() {
     lastScrollY = window.scrollY;
@@ -44,7 +44,6 @@
   // Apply immediately in case page is loaded mid-scroll
   updateScrollState();
 
-
   /* ──────────────────────────────────────────────────────────────
      2. MOBILE MENU — slide-down toggle
   ─────────────────────────────────────────────────────────────── */
@@ -56,7 +55,7 @@
     hamburger.setAttribute("aria-expanded", "true");
     mobileMenu.classList.add("open");
     mobileMenu.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "";   // allow scroll behind menu
+    document.body.style.overflow = ""; // allow scroll behind menu
   }
 
   function closeMenu() {
@@ -89,17 +88,18 @@
     if (menuOpen && !navbar.contains(e.target)) closeMenu();
   });
 
-
   /* ──────────────────────────────────────────────────────────────
      3. ACTIVE LINK — Intersection Observer per section
   ─────────────────────────────────────────────────────────────── */
-  const sections = document.querySelectorAll("main [id]");
+  const sections = document.querySelectorAll(
+    "#home, #about, #projects, #team, #packages, #contact",
+  );
 
   if (sections.length > 0) {
     const observerOptions = {
-      root:       null,
-      rootMargin: "-40% 0px -55% 0px",   // activate when section is near centre
-      threshold:  0,
+      root: null,
+      rootMargin: "-40% 0px -55% 0px", // activate when section is near centre
+      threshold: 0,
     };
 
     const sectionObserver = new IntersectionObserver(function (entries) {
@@ -148,6 +148,4 @@
 
   handleLinkClick(navLinks);
   handleLinkClick(mobileLinks);
-
 })();
-
