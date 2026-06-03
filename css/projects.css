@@ -4,15 +4,20 @@
 
 .projects-section {
   padding: 100px 0;
-  background-color: #f8faff;
   overflow: hidden; /* Prevents horizontal scrollbar on the whole page */
+  margin: 0 30px;
 }
 
 .projects-header-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  margin-left: 130px;
+}
+
+.projects-title-area{
+  max-width: 600px;
 }
 
 .section-tag {
@@ -23,15 +28,24 @@
   font-family: var(--font-sora);
   font-size: clamp(32px, 5vw, 46px);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--brand-blue);
   line-height: 1.2;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.projects-subtitle{
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 16px;
 }
 
 /* --- Navigation Arrows --- */
 .nav-arrows {
   display: inline-flex;
   gap: 12px;
+  margin-right: 130px;
 }
 
 .custom-nav {
@@ -76,7 +90,8 @@
   gap: 40px;
   width: max-content;
   /* Add padding to the left/right so the first/last cards can center nicely */
-  padding: 0 calc(50vw - 350px); 
+  padding: 0 calc(50vw - 350px);
+  flex-wrap: wrap;
 }
 
 /* --- Project Cards --- */
@@ -87,7 +102,7 @@
   padding: 50px;
   border-radius: 24px;
   border: 1px solid #e5e7eb;
-  background-color: #ffffff;
+  background-color: var(--bg-white);
   opacity: 0.5;
   transform: scale(0.95);
   scroll-snap-align: center;
@@ -102,12 +117,16 @@
 .project-card.display {
   opacity: 1;
   transform: scale(1);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.211);
   border-color: rgba(30, 107, 255, 0.3);
   z-index: 10;
 }
 
-/* Expanding Underline on Hover/Active */
+.project-card.display:hover{
+  transform: scale(1.05);
+}
+
+/* Expanding Underline on Hover/Active*/
 .project-card::after {
   content: "";
   position: absolute;
@@ -121,7 +140,7 @@
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.project-card.display::after,
+
 .project-card:hover::after {
   transform: scaleX(1);
 }
@@ -136,18 +155,47 @@
 
 .project-type {
   color: var(--brand-blue);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.15px;
+  margin-bottom: 12px;
   text-transform: uppercase;
+  display: block;
 }
 
-.card-icons i {
+.card-icons {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column; /* Stacks them vertically */
+  gap: 12px;
+}
+
+.card-icons a {
   border: 1px solid #e5e7eb;
-  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 12px;
   color: var(--text-secondary);
+  text-decoration: none;
   transition: 0.3s;
+  background: transparent;
+}
+
+.card-icons a:hover {
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+  background: rgba(30, 107, 255, 0.05);
+}
+
+.project-client {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 24px;
 }
 
 .project-card:hover .card-icons i {
@@ -236,7 +284,7 @@
 
 .view-projects-btn:hover {
   background-color: var(--brand-blue-dk);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 8px 20px rgba(30, 107, 255, 0.2);
 }
 

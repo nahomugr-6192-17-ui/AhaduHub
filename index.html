@@ -377,17 +377,20 @@
       </section>
     <!-- ══════════════════════════ ABOUT SECTION END ═══════════════════════════ -->
 
-     <!-- ══════════════════════════ PROJECTS SECTION END ═══════════════════════════ -->
+     <!-- ═══════════════════════════════ PROJECTS SECTION ═══════════════════════════════ -->
       <section id="projects" class="projects-section">
         <div class="container">
           <div class="projects-header-wrapper">
             <div class="projects-title-area">
               <div class="status-pill section-tag">
-                <span class="status-dot"></span> OUR WORK
+                PROJECTS
               </div>
-              <h2 class="projects-h2">Featured Projects</h2>
+              <h2 class="projects-h2">Selected Projects</h2>
+              <!-- NEW: Added the subtitle paragraph -->
+              <p class="projects-subtitle">A look at recent client work — structured digital systems built for institutions and growing companies.</p>
             </div>
             
+            <!-- Navigation Arrows (Pushed to the right) -->
             <div class="nav-arrows">
               <button class="custom-nav prev-project-btn" aria-label="Previous Project">
                 <i class="fas fa-arrow-left"></i>
@@ -399,74 +402,85 @@
           </div>
         </div>
 
+        <!-- Horizontal Swiper Container -->
         <div id="swiper" class="projects-swiper">
           <div id="cardWrapper" class="swiper-wrapper">
             
+            <!-- Project Card 1 (Active) -->
             <div class="project-card display">
-              <div class="card-top">
-                <span class="project-type">Web Development & Translation</span>
-                <div class="card-icons">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
+              <!-- NEW: Stacked icons in the top right -->
+              <div class="card-icons">
+                <a href="#" aria-label="Live Site"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
               </div>
-              <h3>Ethio-Nug Digital Platform</h3>
-              <p class="project-desc">A modernized web interface and integrated FAQ system designed for clarity and user engagement. Includes comprehensive localized content.</p>
+              
+              <span class="project-type">CORPORATE WEBSITE</span>
+              <h3>Negra Edible Oil</h3>
+              <p class="project-desc">A modern corporate website with responsive layout and refined brand presentation, built for long-term maintainability and growth.</p>
+              
+              <!-- NEW: Small client text -->
+              <p class="project-client">Delivered for a regional manufacturing company</p>
+              
+              <div class="tech-tags">
+                <span class="TT">Next.js</span>
+                <span class="TT">React</span>
+                <span class="TT">Tailwind</span>
+                <span class="TT">Vercel</span>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+              <div class="card-icons">
+                <a href="#" aria-label="Live Site"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              </div>
+              
+              <span class="project-type">LEARNING PLATFORM</span>
+              <h3>LearnHub Academy</h3>
+              <p class="project-desc">A full-stack learning platform supporting progress tracking, and structured content delivery for students.</p>
+              <p class="project-client">Delivered for a private training organization</p>
+              
               <div class="tech-tags">
                 <span class="TT">React</span>
-                <span class="TT">Figma</span>
-                <span class="TT">UI/UX</span>
+                <span class="TT">FastAPI</span>
+                <span class="TT">PostgreSQL</span>
+                <span class="TT">Tailwind</span>
               </div>
             </div>
 
+            <!--Project 3-->
             <div class="project-card">
-              <div class="card-top">
-                <span class="project-type">Utility Application</span>
-                <div class="card-icons">
-                  <i class="fab fa-github"></i>
-                </div>
+              <div class="card-icons">
+                <a href="#" aria-label="Live Site"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
               </div>
-              <h3>Secure Password Generator</h3>
-              <p class="project-desc">A lightweight, highly responsive local application designed to generate complex, secure passwords on the fly with customizable constraints.</p>
+              
+              <span class="project-type">LEARNING PLATFORM</span>
+              <h3>LearnHub Academy</h3>
+              <p class="project-desc">A full-stack learning platform supporting progress tracking, and structured content delivery for students.</p>
+              <p class="project-client">Delivered for a private training organization</p>
+              
               <div class="tech-tags">
-                <span class="TT">JavaScript</span>
-                <span class="TT">HTML/CSS</span>
-                <span class="TT">Git</span>
+                <span class="TT">React</span>
+                <span class="TT">FastAPI</span>
+                <span class="TT">PostgreSQL</span>
+                <span class="TT">Tailwind</span>
               </div>
             </div>
 
-            <div class="project-card">
-              <div class="card-top">
-                <span class="project-type">System Architecture</span>
-                <div class="card-icons">
-                  <i class="fas fa-database"></i>
-                </div>
-              </div>
-              <h3>Information Retrieval System</h3>
-              <p class="project-desc">An academic-grade search engine model utilizing inverted indexes, tf-idf weighting, and Porter stemming rules for document collection processing.</p>
-              <div class="tech-tags">
-                <span class="TT">Java</span>
-                <span class="TT">Algorithms</span>
-                <span class="TT">Data Structures</span>
-              </div>
-            </div>
-
-            </div>
+          </div>
         </div>
 
         <div class="container projects-footer">
-          <div class="indicators projects-indicators">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
+          <!-- REMOVED: The dots (.projects-indicators) have been deleted entirely -->
           
+          <!-- UPDATED: Button text and icon -->
           <a href="#projects" class="view-projects-btn">
-            View All Projects <i class="fas fa-arrow-right"></i>
+            View All The Projects <i class="fas fa-location-arrow" style="transform: rotate(45deg);"></i>
           </a>
         </div>
       </section>
-    <!-- ══════════════════════════ PROJECTS SECTION END ═══════════════════════════ -->
-
 
       <section id="team" class="demo-section">
         <h2>Team Section (Coming Soon)</h2>
