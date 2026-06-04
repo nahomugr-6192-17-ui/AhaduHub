@@ -190,16 +190,22 @@
   font-size: clamp(14px, 2vw, 20px);
   font-weight: 600;
   color: var(--text-primary);
-  margin-top: 12px;
   margin-left: 10px;
 }
 
 .card-container .card p {
   text-align: left;
-  font-size: clamp(12px, 2vw, 16px);
+  font-size: clamp(12px, 2vw, 15px);
   color: var(--text-secondary);
   margin-top: 4px;
   margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.card-container .card .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 

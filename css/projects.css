@@ -152,7 +152,7 @@
 }
 
 /* --- Card Content --- */
-.card-top {
+.project-card .card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -286,6 +286,7 @@
   align-items: center;
   gap: 12px;
   transition: all 0.3s ease;
+  margin-top: 28px;
 }
 
 .view-projects-btn:hover {
