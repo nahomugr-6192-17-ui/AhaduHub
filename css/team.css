@@ -1,0 +1,228 @@
+/* ============================================================
+   AhaduHub — Team Section Styles
+   ============================================================ */
+
+.team-section {
+  padding: 100px 0 120px;
+  width: 100%;
+}
+
+/* --- Header Layout --- */
+.team-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.team-tag {
+  margin: 0 auto 20px;
+}
+
+.team-main-title {
+  font-family: var(--font-sora);
+  font-size: clamp(30px, 4.5vw, 42px);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.team-main-subtitle {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Value Proposition Micro-Cards Row --- */
+.team-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 120px; /* Large space down to give room for overlapping photos */
+}
+
+.feature-micro-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border: 1px solid #eef2f6;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-micro-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.micro-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.micro-icon-box.blue-tint {
+  background-color: #f0f6ff;
+  color: var(--brand-blue);
+}
+
+.feature-micro-card span {
+  font-family: var(--font-inter);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* --- Team Grid Profiles Track --- */
+.team-members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: stretch;
+}
+
+.member-card {
+  background: #ffffff;
+  border: 1px solid #eef2f6;
+  border-radius: 28px;
+  padding: 0 32px 40px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Featured Profile Highlight State (Nahom's card) */
+.member-card.featured-profile {
+  border-color: rgba(30, 107, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(30, 107, 255, 0.07);
+}
+
+/* --- Floating Image Connector Logic --- */
+.member-image-container {
+  width: 240px;
+  height: 250px;
+  margin: -90px auto 24px; /* Pulls image up over the top border dynamically */
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; /* Keeps rectangular form from your screenshot design template */
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Soft transition fade overlay block to blend photo into white container text */
+.member-img-fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  pointer-events: none;
+}
+
+/* --- Typographical Alignment --- */
+.member-info-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.member-name {
+  font-family: var(--font-sora);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.member-role {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.member-role.text-accent {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.member-skills-tags {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  color: #94a3b8; /* Elegant lighter gray typography tracking */
+  margin-bottom: 32px;
+}
+
+/* --- Social Anchor Clusters --- */
+.member-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto; /* Forces execution row cleanly down to container baseline */
+}
+
+.member-social-links a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.member-social-links a:hover {
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+  background-color: #f0f6ff;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive Media Layout Tracking --- */
+@media (max-width: 1120px) {
+  .team-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .team-members-grid {
+    grid-template-columns: 1fr;
+    gap: 120px; /* Expands room so lower profile components don't clip overlapping images */
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .member-card {
+    padding: 0 24px 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-features-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
