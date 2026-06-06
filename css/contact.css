@@ -1,0 +1,278 @@
+/* ============================================================
+   AhaduHub — Contact Section Styles
+   ============================================================ */
+
+.contact-section {
+  padding: 100px 0;
+  width: 100%;
+}
+
+/* --- Header --- */
+.contact-section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.contact-main-title {
+  font-family: var(--font-sora);
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 600;
+  color: var(--brand-blue);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.contact-main-subtitle {
+  font-family: var(--font-inter);
+  font-size: clamp(14px, 2vw, 16px);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Grid Layout --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   Left Column: Contact Method Cards 
+   ========================================= */
+.contact-methods-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-method-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.contact-method-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-blue);
+  box-shadow: 0 10px 25px rgba(30, 107, 255, 0.08);
+}
+
+.recommended-card {
+  border-color: rgba(30, 107, 255, 0.3);
+  margin-top: 12px; /* Leaves room for the badge */
+}
+
+.recommended-badge {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  transform: translateY(-50%);
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  font-family: var(--font-inter);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.method-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  font-size: 21px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-method-card:hover .method-icon-box {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+}
+
+.method-content {
+  flex: 1;
+}
+
+.method-content h3 {
+  font-family: var(--font-sora);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.method-content p {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.method-action-icon {
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.contact-method-card:hover .method-action-icon {
+  color: var(--brand-blue);
+}
+
+/* =========================================
+   Right Column: Formal Form & Floating Labels
+   ========================================= */
+.ahadu-contact-form {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.floating-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+/* Base Input Styles */
+.floating-input,
+.floating-textarea,
+.floating-select {
+  width: 100%;
+  padding: 16px;
+  font-family: var(--font-inter);
+  font-size: 15px;
+  color: var(--text-primary);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus State borders */
+.floating-input:focus,
+.floating-textarea:focus,
+.floating-select:focus {
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 1px var(--brand-blue); /* Crisp inner border line */
+}
+
+/* Textarea specific */
+.floating-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* The Label (Default State) */
+.floating-label {
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  font-family: var(--font-inter);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  background-color: #ffffff; /* Must have solid background to block border */
+  padding: 0 4px;
+  pointer-events: none; /* Allows clicks to pass through to the input */
+  transition: all 0.2s ease-out;
+}
+
+/* THE MAGIC TRICK:
+   1. If input is focused OR
+   2. If input does NOT contain the placeholder (meaning text was typed)
+   -> Move the label UP and color it blue!
+*/
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label,
+.floating-textarea:focus ~ .floating-label,
+.floating-textarea:not(:placeholder-shown) ~ .floating-label {
+  top: -8px;
+  left: 12px;
+  font-size: 10px;
+  color: var(--brand-blue);
+}
+
+/* Select dropdowns always have a value, so we force the label up */
+.floating-label.active-static {
+  top: -8px;
+  left: 12px;
+  font-size: 10px;
+}
+
+.floating-select:focus ~ .floating-label.active-static {
+  color: var(--brand-blue);
+}
+
+/* Submit Button */
+.submit-audit-btn {
+  width: 100%;
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  font-family: var(--font-inter);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.submit-audit-btn:hover {
+  background-color: #1a5bed;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.25);
+}
+
+.form-footer-text {
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 16px;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    gap: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ahadu-contact-form {
+    padding: 24px;
+  }
+}

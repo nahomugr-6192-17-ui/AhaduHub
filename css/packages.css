@@ -3,7 +3,7 @@
    ============================================================ */
 
 .pricing-section {
-  padding: 100px 0 120px;
+  padding: 100px 0;
   width: 100%;
 }
 
@@ -13,16 +13,6 @@
   margin-bottom: 64px;
 }
 
-.pricing-tag {
-  margin: 0 auto 20px;
-  background-color: #ffffff;
-  border: 1px solid #dbeafe;
-  color: var(--brand-blue);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  padding: 6px 16px;
-}
-
 .pricing-tag .status-dot {
   display: none; /* Hides the dot for this specific pill based on your design */
 }
@@ -30,16 +20,17 @@
 .pricing-main-title {
   font-family: var(--font-sora);
   font-size: clamp(32px, 4.5vw, 46px);
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 500;
+  color: var(--brand-blue);
   letter-spacing: -0.02em;
   margin-bottom: 16px;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .pricing-main-subtitle {
   font-family: var(--font-inter);
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
@@ -52,6 +43,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* --- Base Card Styles --- */
@@ -68,7 +61,14 @@
 
 .pricing-card:hover {
   transform: translateY(-4px);
+  border-color: var(--brand-blue);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.pricing-card:hover .pricing-btn {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--brand-blue);
 }
 
 /* --- Highlighted Plan (Standard) --- */
@@ -101,14 +101,22 @@
 }
 
 /* --- Card Typography & Content --- */
-.plan-name {
-  font-family: var(--font-inter);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+.plan-name{
+  font-family: var(--font-sora);
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--brand-blue);
+  background: var(--bg-white) ;
   color: var(--brand-blue);
+  font-size: clamp(12px, 1.5vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
   margin-bottom: 16px;
-  display: block;
+  width: max-content;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
 .plan-price-wrapper {
@@ -129,13 +137,13 @@
 
 .plan-duration {
   font-family: var(--font-inter);
-  font-size: 14px;
+  font-size: 18px;
   color: #94a3b8;
 }
 
 .plan-delivery {
   font-family: var(--font-inter);
-  font-size: 13px;
+  font-size: 14px;
   color: #64748b;
   margin-bottom: 24px;
   display: block;
@@ -143,7 +151,7 @@
 
 .plan-description {
   font-family: var(--font-inter);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 24px;
@@ -173,7 +181,7 @@
   align-items: flex-start;
   gap: 12px;
   font-family: var(--font-inter);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -187,7 +195,7 @@
   align-items: center;
   justify-content: center;
   color: var(--brand-blue);
-  font-size: 9px;
+  font-size: 10px;
   flex-shrink: 0;
   margin-top: 2px;
 }

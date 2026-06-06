@@ -13,10 +13,6 @@
   margin-bottom: 148px;
 }
 
-.team-tag {
-  margin: 0 auto 20px;
-}
-
 .team-main-title {
   font-family: var(--font-sora);
   font-size: clamp(32px, 5vw, 46px);

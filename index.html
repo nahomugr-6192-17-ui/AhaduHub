@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/team.css">
     <link rel="stylesheet" href="css/packages.css">
+    <link rel="stylesheet" href="css/contact.css">
 
   </head>
   <body>
@@ -579,7 +580,7 @@
           
           <div class="pricing-section-header">
             <div class="status-pill pricing-tag">
-              PRICING
+              PACKAGES
             </div>
             <h2 class="pricing-main-title">Flexible Packages for Every Project</h2>
             <p class="pricing-main-subtitle">Choose a plan that fits your needs — from simple landing pages to complete frontend solutions.</p>
@@ -661,14 +662,135 @@
         </div>
       </section>
       <!-- ═══════════════════════════════ END OF PACKAGES SECTION ═══════════════════════════════ -->
-      <section id="contact" class="demo-section">
-        <h2>Contact Section (Coming Soon)</h2>
+      <section id="contact" class="contact-section demo-section">
+        <div class="container">
+          
+          <div class="contact-section-header">
+            <div class="status-pill contact-tag">
+              GET STARTED
+            </div>
+            <h2 class="contact-main-title">Start Your Project With <br/> AhaduHub</h2>
+            <p class="contact-main-subtitle">Choose how you want to reach us—quick chat or a structured request. We'll respond clearly and promptly.</p>
+          </div>
+
+          <div class="contact-grid">
+            
+            <div class="contact-methods-column">
+              
+              <a href="#" class="contact-method-card recommended-card">
+                <div class="recommended-badge">RECOMMENDED</div>
+                <div class="method-icon-box">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="method-content">
+                  <h3>Call Us</h3>
+                  <p>Book a quick 20-minute call to discuss your project and get clear direction on next steps.</p>
+                </div>
+                <div class="method-action-icon">
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+              </a>
+
+              <a href="#" class="contact-method-card">
+                <div class="method-icon-box">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <div class="method-content">
+                  <h3>Telegram</h3>
+                  <p>Chat with us directly for quick responses and project discussions.</p>
+                </div>
+                <div class="method-action-icon">
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+              </a>
+
+              <a href="#" class="contact-method-card">
+                <div class="method-icon-box">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="method-content">
+                  <h3>WhatsApp</h3>
+                  <p>Reach out instantly for fast communication and easy follow-ups.</p>
+                </div>
+                <div class="method-action-icon">
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+              </a>
+
+              <a href="#" class="contact-method-card">
+                <div class="method-icon-box">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="method-content">
+                  <h3>LinkedIn</h3>
+                  <p>Connect professionally and explore our work and experience.</p>
+                </div>
+                <div class="method-action-icon">
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+              </a>
+
+            </div>
+
+            <div class="contact-form-column">
+              <form class="ahadu-contact-form" novalidate>
+                
+                <div class="form-group floating-group">
+                  <input type="text" id="fullName" class="floating-input" placeholder=" " required>
+                  <label for="fullName" class="floating-label">FULL NAME</label>
+                  <span class="error-message" id="nameError">Please enter your full name.</span>
+                </div>
+
+                <div class="form-group floating-group">
+                  <input type="email" id="email" class="floating-input" placeholder=" " required>
+                  <label for="email" class="floating-label">EMAIL ADDRESS</label>
+                  <span class="error-message" id="emailError">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group floating-group">
+                  <input type="text" id="organization" class="floating-input" placeholder=" ">
+                  <label for="organization" class="floating-label">ORGANIZATION / COMPANY</label>
+                </div>
+
+                <div class="form-group floating-group">
+                  <select id="projectType" class="floating-select" required>
+                    <option value="" disabled selected hidden>Select Project Type</option>
+                    <option value="Landing Page">Landing Page</option>
+                    <option value="Corporate Website">Corporate Website</option>
+                    <option value="E-Commerce">E-Commerce</option>
+                    <option value="UI/UX Redesign">UI/UX Redesign</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <label for="projectType" class="floating-label active-static">PROJECT TYPE</label>
+                </div>
+
+                <div class="form-group floating-group">
+                  <textarea id="message" class="floating-textarea" placeholder=" " rows="4" required></textarea>
+                  <label for="message" class="floating-label">MESSAGE</label>
+                </div>
+
+                <button type="submit" class="submit-audit-btn">
+                  Request a Website Audit <i class="fas fa-arrow-right"></i>
+                </button>
+                
+                <p class="form-footer-text">We typically respond within 24 hours.</p>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
       </section>
 
 
     <script src="js/hero+navbar.js"></script>
     <script src="js/about.js"></script>
     <script src="js/projects.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/contact.js"></script>
+
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
