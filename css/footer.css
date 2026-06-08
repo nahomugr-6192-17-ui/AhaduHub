@@ -25,23 +25,25 @@
 
 /* --- Column 1: Brand --- */
 .footer-logo-img {
-  height: 40px; /* Adjust based on your actual logo */
+  height: 90px; /* Adjust based on your actual logo */
   margin-bottom: 24px;
   filter: brightness(0) invert(1); /* Makes a dark logo white, remove if your logo is already white */
 }
 
 .footer-desc {
   color: #94a3b8;
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.6;
   margin-bottom: 16px;
   max-width: 280px;
 }
 
 .footer-highlight {
+  font-family: var(--font-sora);
   color: var(--brand-blue);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 /* --- Columns 2 & 3: Links --- */
@@ -72,7 +74,7 @@
 }
 
 .footer-list a:hover {
-  color: #ffffff;
+  color: var(--bg-white);
   transform: translateX(4px);
 }
 
@@ -105,7 +107,10 @@
   transition: color 0.3s ease;
 }
 
-.footer-contact-list a:hover {
+.footer-contact-list a:hover,
+.footer-contact-list a:focus,
+.footer-contact-list li:hover a,
+.footer-contact-list li:hover i {
   color: #ffffff;
 }
 
@@ -168,6 +173,17 @@
   border-top: 1px solid #1e293b;
   font-size: 13px;
   color: #64748b;
+}
+
+.logo__wordmark-footer {
+  font-family: var(--font-sora);
+  font-weight: 600;
+  font-size: clamp(15px, 2vw, 23px);
+  color: var(--bg-white);
+  letter-spacing: -0.02em;
+  transition: color var(--transition);
+  margin-left: 4px;
+  margin-bottom: 18px;
 }
 
 /* --- Responsive Design --- */
