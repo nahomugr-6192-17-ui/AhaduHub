@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/team.css">
     <link rel="stylesheet" href="css/packages.css">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel = "stylesheet" href = "css/footer.css"
 
   </head>
   <body>
@@ -738,13 +739,13 @@
                 <div class="form-group floating-group">
                   <input type="text" id="fullName" class="floating-input" placeholder=" " required>
                   <label for="fullName" class="floating-label">FULL NAME</label>
-                  <span class="error-message" id="nameError">Please enter your full name.</span>
+                  <span class="error-text" id="nameError"></span>
                 </div>
 
                 <div class="form-group floating-group">
                   <input type="email" id="email" class="floating-input" placeholder=" " required>
                   <label for="email" class="floating-label">EMAIL ADDRESS</label>
-                  <span class="error-message" id="emailError">Please enter a valid email address.</span>
+                  <span class="error-text" id="emailError"></span>
                 </div>
 
                 <div class="form-group floating-group">
@@ -754,7 +755,7 @@
 
                 <div class="form-group floating-group">
                   <select id="projectType" class="floating-select" required>
-                    <option value="" disabled selected hidden>Select Project Type</option>
+                    <option value="" selected hidden disabled>Select Project Type</option>
                     <option value="Landing Page">Landing Page</option>
                     <option value="Corporate Website">Corporate Website</option>
                     <option value="E-Commerce">E-Commerce</option>
@@ -762,6 +763,7 @@
                     <option value="Other">Other</option>
                   </select>
                   <label for="projectType" class="floating-label active-static">PROJECT TYPE</label>
+                  <span class="error-text" id="projectTypeError"></span>
                 </div>
 
                 <div class="form-group floating-group">
@@ -782,6 +784,88 @@
         </div>
       </section>
 
+
+      <footer class="ahadu-footer">
+        <div class="container">
+          
+          <div class="footer-grid">
+            
+            <div class="footer-brand-col">
+              <a href="#" class="footer-logo">
+                <img src="img/logo-white.png" alt="AhaduHub Logo" class="footer-logo-img">
+              </a>
+              <p class="footer-desc">
+                Building modern, scalable, and user-focused web solutions for institutions and organizations.
+              </p>
+              <p class="footer-highlight">Reliable. Structured. Scalable.</p>
+            </div>
+
+            <div class="footer-links-col">
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-links-col">
+              <h4 class="footer-heading">Services</h4>
+              <ul class="footer-list">
+                <li><a href="#">Website Redesign</a></li>
+                <li><a href="#">Frontend Development</a></li>
+                <li><a href="#">Responsive Design</a></li>
+                <li><a href="#">UI/UX Improvement</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-contact-col">
+              <h4 class="footer-heading">Contact</h4>
+              <ul class="footer-contact-list">
+                <li>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>+251 000 000 000</span>
+                </li>
+                <li>
+                  <i class="far fa-envelope"></i>
+                  <a href="mailto:hello@ahaduhub.com">hello@ahaduhub.com</a>
+                </li>
+                <li>
+                  <i class="fab fa-telegram-plane"></i>
+                  <a href="#">@AhaduHub</a>
+                </li>
+                <li>
+                  <i class="fab fa-whatsapp"></i>
+                  <a href="#">WhatsApp Chat</a>
+                </li>
+              </ul>
+
+              <div class="availability-pill">
+                <span class="status-dot"></span>
+                Available for new projects
+              </div>
+
+              <div class="footer-socials">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="footer-bottom">
+            <p class="copyright">© 2026 AhaduHub. All rights reserved.</p>
+            <p class="built-by">Built by AhaduHub</p>
+          </div>
+
+        </div>
+      </footer>
 
     <script src="js/hero+navbar.js"></script>
     <script src="js/about.js"></script>
