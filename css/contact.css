@@ -67,8 +67,9 @@
 
 .contact-method-card:hover {
   transform: translateY(-2px);
-  border-color: var(--brand-blue);
-  box-shadow: 0 10px 25px rgba(30, 107, 255, 0.08);
+  border-color: var(--bg-white);
+  box-shadow: 0 10px 25px rgba(30, 109, 255, 0.482);
+  background-color: var(--brand-blue);
 }
 
 .recommended-card {
@@ -91,6 +92,10 @@
   border-radius: 50px;
 }
 
+.contact-method-card:hover .recommended-badge {
+  box-shadow: 0 0px 3px rgba(255, 255, 255, 0.977);
+}
+
 .method-icon-box {
   width: 50px;
   height: 50px;
@@ -108,6 +113,7 @@
 .contact-method-card:hover .method-icon-box {
   background-color: var(--brand-blue);
   color: #ffffff;
+  box-shadow: 0 0 4px rgb(255, 255, 255);
 }
 
 .method-content {
@@ -130,6 +136,14 @@
   margin: 0;
 }
 
+.contact-method-card:hover .method-content p {
+  color: #ffffffd7;
+}
+
+.contact-method-card:hover .method-content h3 {
+  color: #ffffff;
+}
+
 .method-action-icon {
   color: #cbd5e1;
   font-size: 14px;
@@ -137,7 +151,7 @@
 }
 
 .contact-method-card:hover .method-action-icon {
-  color: var(--brand-blue);
+  color: #ffffffd7;
 }
 
 /* =========================================
@@ -149,6 +163,36 @@
   border-radius: 16px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.ahadu-contact-form h1 {
+  position: relative;
+  font-family: var(--font-sora);
+  font-size: clamp(24px, 3vw, 28px);
+  font-weight: 600;
+  color: var(--brand-blue);
+  margin: 1.1px 0 24px;
+  text-transform: uppercase;
+  display: inline-block; /* Highly recommended: makes the underline exactly the width of the text */
+}
+
+.ahadu-contact-form h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; /* Adjusted slightly down so it doesn't cut through the letters */
+  left: 0;      /* Set to 0 to span the exact width of the text */
+  right: 0;
+  height: 3px;
+  background: var(--brand-blue);
+  border-radius: 16px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.ahadu-contact-form:hover h1::after,
+.ahadu-contact-form:focus-within h1::after {
+  transform: scaleX(1);
 }
 
 .floating-group {
@@ -244,7 +288,7 @@
   background-color: var(--brand-blue);
   color: #ffffff;
   font-family: var(--font-inter);
-  font-size: 15px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: 600;
   padding: 16px;
   border: none;

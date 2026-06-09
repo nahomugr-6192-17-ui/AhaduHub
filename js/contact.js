@@ -1,9 +1,9 @@
 /* ============================================================
-   AhaduHub — Contact Form Logic
+   AhaduHub — Contact Form Logic (EmailJS Integrated)
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init({ publicKey: "YOUR_PUBLIC_KEY_HERE" });
+  emailjs.init({ publicKey: "dyYo8ej2s4J8Od2Hx" });
 
   const contactForm = document.querySelector(".ahadu-contact-form");
   const submitBtn = document.querySelector(".submit-audit-btn");
@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     // Clear error states as soon as the user starts typing
     const allInputs = contactForm.querySelectorAll(
-      ".floating-input, .floating-textarea, .floating-select",
+      ".floating-input, .floating-textarea, .floating-select"
     );
+    
     allInputs.forEach((input) => {
       input.addEventListener("input", function () {
         const group = this.closest(".floating-group");
@@ -45,12 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // --- Original EmailJS Submission Logic Starts Here ---
+      // --- EmailJS Submission Logic ---
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.style.pointerEvents = "none";
       submitBtn.style.opacity = "0.8";
 
+      // Gather form data - ensure these match your EmailJS template variables!
       const templateParams = {
         fullName: document.getElementById("fullName").value,
         email: document.getElementById("email").value,
@@ -59,11 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
         message: document.getElementById("message").value,
       };
 
-      const serviceID = "YOUR_SERVICE_ID_HERE";
-      const templateID = "YOUR_TEMPLATE_ID_HERE";
+      // 🛑 STEP 2: Replace with your EmailJS Service ID & Template ID
+      // Found in EmailJS Dashboard -> Email Services / Email Templates
+      const serviceID = "service_43ga024";
+      const templateID = "template_akiz29p";
 
+      // Send the email via EmailJS
       emailjs.send(serviceID, templateID, templateParams).then(
         (response) => {
+          console.log("SUCCESS!", response.status, response.text);
           submitBtn.innerHTML = '<i class="fas fa-check"></i> Request Sent!';
           submitBtn.style.backgroundColor = "#10b981";
           submitBtn.style.borderColor = "#10b981";
@@ -79,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }, 3500);
         },
         (error) => {
-          submitBtn.innerHTML =
-            '<i class="fas fa-exclamation-triangle"></i> Failed to send';
+          console.log("FAILED...", error);
+          submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed to send';
           submitBtn.style.backgroundColor = "#ef4444";
           submitBtn.style.borderColor = "#ef4444";
           submitBtn.style.opacity = "1";
@@ -91,13 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.style.borderColor = "";
             submitBtn.style.pointerEvents = "auto";
           }, 3500);
-        },
+        }
       );
     });
   }
 
+  // Reset the form and dropdown on page load
   window.addEventListener("load", () => {
-    document.getElementById("projectType").selectedIndex = 0;
-    contactForm.reset();
+    const projectTypeDropdown = document.getElementById("projectType");
+    if (projectTypeDropdown) {
+      projectTypeDropdown.selectedIndex = 0;
+    }
+    if (contactForm) {
+      contactForm.reset();
+    }
   });
 });
