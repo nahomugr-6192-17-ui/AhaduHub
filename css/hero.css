@@ -212,22 +212,24 @@
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE BREAKPOINTS (Hero Only)
    ══════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .demo-hero {
-    padding: 100px 10px;
+    padding: 0 10px;
   }
 
   .sub-headline p{
-    font-size: 9.35px;
+    font-size: clamp(10px, 2.8vw, 12px);
   }
 
   .demo-section h1{
-    font-size: clamp(43px, 3vw, 100px);
+    font-size: clamp(50px, 10vw, 100px);
+    text-align: center;
   }
 
   .desc-content p{
     margin-top: -12px;
-    font-size: 13.5px;
+    font-size: clamp(12px, 4vw, 13.5px);
+    text-align: center;
   }
 
   .buttons{
@@ -241,18 +243,17 @@
 
   .btn-about, .btn-projects {
     padding: 10px 18px;
-    font-size: 12px;
   }
 
   .btn-projects .btn-arrow{
-    font-size: 13px;
+    font-size: clamp(12px, 4vw, 13.5px);
   }
 
   .card-container{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 10px;
     padding: 10px;
   }
 
@@ -286,12 +287,12 @@
   }
 
   .card-container .card h3{
-    font-size: clamp(10.5px, 2vw, 14px);
+    font-size: clamp(10.5px, 3vw, 14px);
     margin: 0px;
   }
 
   .card-container .card p{
-    font-size: clamp(10px, 2vw, 12px);
-    margin: 0;
+    font-size: clamp(10px, 2.4vw, 12px);
+    margin: 0 0 4px 4px;
   }
 }

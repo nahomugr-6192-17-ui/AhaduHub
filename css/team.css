@@ -176,35 +176,6 @@
   transform: translateY(-2px);
 }
 
-.learn-more-btn {
-  display: inline-block;
-  width: 100%;
-  margin-top: 24px;
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  background-color: #f1f5f9; /* Light grey */
-  color: #64748b; /* Medium grey text */
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.member-card:hover .learn-more-btn {
-  background-color: #f0f6ff;
-  color: var(--brand-blue);
-  border: 1px solid var(--brand-blue);
-  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.2);
-}
-
-.member-card .learn-more-btn:hover {
-  background-color: var(--brand-blue);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(30, 107, 255, 0.2);
-}
-
 /* --- Responsive Media Layout Tracking --- */
 @media (max-width: 1120px) {
   .team-features-grid {
