@@ -310,6 +310,15 @@
   .swiper-wrapper {
     padding: 0 20px; /* Remove the centering trick for smaller screens */
   }
+
+  .nav-arrows {
+    display: none;
+  }
+
+  .projects-subtitle{
+    font-size: clamp(13px, 3vw, 16px);
+    margin-bottom: -24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -317,6 +326,13 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+
+    .project-card {
+    width: 90vw;
+    height: auto;
+    min-height: 380px;
+    padding: 30px;
   }
   
   .project-card {

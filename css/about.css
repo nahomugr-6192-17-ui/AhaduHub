@@ -553,13 +553,49 @@
     font-size: 14px;
   }
 
-  .process-container {
-    flex-direction: column;
-    gap: 60px;
+  .process-main-title {
+    font-size: clamp(26px, 4vw, 36px);
+  }
+
+  .process-main-subtitle {
+    font-size: clamp(14px, 2.5vw, 15px);
+    margin-bottom: -20px;
   }
 
   .timeline-dot {
     display: none;
+  }
+
+  .process-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .process-container::before {
+    content: '';
+    position: absolute;
+    top: 20px; /* Start slightly below the top */
+    bottom: 20px; /* End slightly above the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.2px;
+    background-color: #1b82ff55; 
+    z-index: -1; /* Puts the line behind the cards */
+  }
+
+  /* Ensure the cards have a solid background so the line doesn't show through the text */
+  .process-card {
+    background-color: #ffffff;
+    position: relative; 
+    z-index: 2; /* Keeps the card above the background line */
+  }
+
+  .process-card p{
+    font-size: clamp(14px, 2.5vw, 16px);
   }
 }
 
