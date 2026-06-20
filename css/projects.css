@@ -20,7 +20,7 @@
   margin-bottom: 40px;
 }
 
-.projects-title-area{
+.projects-title-area {
   max-width: 600px;
 }
 
@@ -38,7 +38,7 @@
   text-transform: uppercase;
 }
 
-.projects-subtitle{
+.projects-subtitle {
   font-size: clamp(14px, 2vw, 16px);
   color: var(--text-secondary);
   line-height: 1.6;
@@ -51,7 +51,8 @@
   gap: 12px;
 }
 
-.fa-arrow-left, .fa-arrow-right {
+.fa-arrow-left,
+.fa-arrow-right {
   font-size: 16px;
   transition: color 0.3s ease;
 }
@@ -98,7 +99,7 @@
   width: max-content;
   /* Add padding to the left/right so the first/last cards can center nicely */
   padding: 0 calc(50vw - 350px);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 /* --- Project Cards --- */
@@ -128,7 +129,7 @@
   z-index: 10;
 }
 
-.project-card.display:hover{
+.project-card.display:hover {
   transform: scale(1.05);
 }
 
@@ -136,8 +137,8 @@
 .project-card::after {
   content: "";
   position: absolute;
-  bottom: 0; 
-  left: 30px; 
+  bottom: 0;
+  left: 30px;
   right: 30px;
   height: 4px;
   background: var(--brand-blue);
@@ -145,7 +146,6 @@
   transform: scaleX(0);
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 
 .project-card:hover::after {
   transform: scaleX(1);
@@ -201,6 +201,8 @@
 .project-client {
   font-size: 13px;
   color: var(--text-secondary);
+  font-family: var(--font-sora);
+  font-weight: 500;
   margin-bottom: 24px;
 }
 
@@ -308,11 +310,18 @@
 /* --- Responsive Breakpoints --- */
 @media (max-width: 992px) {
   .swiper-wrapper {
-    padding: 0 20px; /* Remove the centering trick for smaller screens */
+    padding: 0 40px;
   }
 
-  .projects-subtitle{
+  .projects-subtitle {
     font-size: clamp(13px, 3vw, 16px);
+  }
+
+  /* Add this to constrain the width of your text content inside the card */
+  .project-card h3,
+  .project-desc,
+  .project-client {
+    padding-right: 60px; /* Gives the icons 40px of space + 20px breathing room */
   }
 }
 
@@ -323,25 +332,62 @@
     gap: 20px;
   }
 
-    .project-card {
-    width: 90vw;
-    height: auto;
-    min-height: 380px;
-    padding: 30px;
-  }
-  
   .project-card {
-    width: 85vw;
+    width: 80vw;
     height: auto;
     min-height: 380px;
     padding: 30px;
   }
-  
-  .project-card h3 {
-    font-size: 24px;
+
+  .project-section {
+    padding: 60px 0;
+    margin: 0 20px;
   }
-  
+
+  .nav-arrows {
+    gap: 8px;
+    margin-top: 6px;
+    margin-bottom: -30px;
+  }
+
+  .custom-nav {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fa-arrow-left,
+  .fa-arrow-right {
+    font-size: 14px;
+  }
+
+  .project-card h3 {
+    font-size: clamp(20px, 4vw, 28px);
+  }
+
+  .project-desc {
+    font-size: clamp(12px, 3vw, 15px);
+  }
+
+  .project-client {
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
   .tech-tags {
     flex-wrap: wrap;
+  }
+
+  .card-icons{
+    top: 30px;
+    right: 30px;
+    padding: 5px;
+  }
+
+  .card-icons a{
+    width: 36px;
+    height: 36px;
+  }
+
+  .card-icons a i{
+    font-size: 14px;
   }
 }

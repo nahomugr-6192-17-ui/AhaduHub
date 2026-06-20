@@ -16,7 +16,7 @@
 .contact-main-title {
   font-family: var(--font-sora);
   font-size: clamp(32px, 4.5vw, 46px);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--brand-blue);
   letter-spacing: -0.02em;
   margin-bottom: 16px;
@@ -179,10 +179,10 @@
 .ahadu-contact-form h1::after {
   content: "";
   position: absolute;
-  bottom: -8px; /* Adjusted slightly down so it doesn't cut through the letters */
+  bottom: -1px; /* Adjusted slightly down so it doesn't cut through the letters */
   left: 0;      /* Set to 0 to span the exact width of the text */
   right: 0;
-  height: 3px;
+  height: 1.2px;
   background: var(--brand-blue);
   border-radius: 16px;
   transform: scaleX(0);
@@ -356,10 +356,71 @@
 
 /* --- Responsive Breakpoints --- */
 @media (max-width: 992px) {
+  .contact-section {
+    padding: 80px 20px;
+  }
+
+  .contact-main-title{
+    font-size: clamp(28px, 5vw, 40px);
+  }
+
+  .contact-main-subtitle {
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
+  .contact-methods-column {
+    gap: 16px;
+  }
+
+  .contact-method-card {
+    padding: 20px;
+  }
+
+  .recommended-badge {
+    left: 30px;
+    font-size: clamp(9px, 1.5vw, 10px);
+    padding: 3px 10px;
+  }
+
+  .method-icon-box {
+    width: 44px;
+    height: 44px;
+    font-size: clamp(18px, 2vw, 21px);
+  }
+
+  .method-content h3 {
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+  .method-content p {
+    font-size: clamp(12px, 1.5vw, 14px);
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     max-width: 600px;
     gap: 56px;
+  }
+
+  .ahadu-contact-form {
+    padding: 32px;
+  }
+
+  .ahadu-contact-form h1 {
+    font-size: clamp(22px, 3vw, 26px);
+    margin-top: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: clamp(13px, 2vw, 15px);
+    padding: 14px;
+  }
+
+  .submit-audit-btn {
+    font-size: clamp(13px, 2vw, 15px);
+    padding: 14px;
   }
 }
 
