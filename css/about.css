@@ -568,34 +568,51 @@
 
   .process-container {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     z-index: 1;
-    width: 100%;
+    justify-content: center;
   }
 
-  .process-container::before {
-    content: '';
-    position: absolute;
-    top: 20px; /* Start slightly below the top */
-    bottom: 20px; /* End slightly above the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2.2px;
-    background-color: #1b82ff55; 
-    z-index: -1; /* Puts the line behind the cards */
+  .process-timeline-wrapper {
+    padding: 0;
+    max-width: 600px;
   }
 
-  /* Ensure the cards have a solid background so the line doesn't show through the text */
   .process-card {
     background-color: #ffffff;
-    position: relative; 
-    z-index: 2; /* Keeps the card above the background line */
+    z-index: 2;
+    padding: 18px 21px;
+    width: 180px;
+  }
+
+  .process-card-header-text{
+    margin-bottom: -10px;
+  }
+
+  .process-card-header-text .step-number{
+    font-size: 10px;
+  }
+
+  .process-card h3 {
+    font-size: clamp(15px, 2.5vw, 16px);
   }
 
   .process-card p{
-    font-size: clamp(14px, 2.5vw, 16px);
+    font-size: clamp(12px, 2.5vw, 14px);
+  }
+
+  .process-card-header .icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .process-card-header .icon-box i {
+    font-size: 18px;
+  }
+
+  .timeline-track {
+    display: none;
   }
 }
 
@@ -613,9 +630,7 @@
     height: 320px;
   }
   .process-step {
-    gap: 16px;
-  }
-  .process-card {
-    padding: 20px;
+    gap: 0;
+    padding: 0;
   }
 }

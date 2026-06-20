@@ -311,13 +311,8 @@
     padding: 0 20px; /* Remove the centering trick for smaller screens */
   }
 
-  .nav-arrows {
-    display: none;
-  }
-
   .projects-subtitle{
     font-size: clamp(13px, 3vw, 16px);
-    margin-bottom: -24px;
   }
 }
 
