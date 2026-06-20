@@ -1,25 +1,27 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --brand-blue:     #1e6bff;
-  --brand-blue-dk:  #0747d8; 
-  --text-primary:   #111111;
+  --brand-blue: #1e6bff;
+  --brand-blue-dk: #0747d8;
+  --text-primary: #111111;
   --text-secondary: #444444b3;
-  --bg-white:       #ffffff;
-  --shadow-float:   0 4px 32px rgba(0, 0, 0, 0.10), 0 1px 6px rgba(0, 0, 0, 0.06);
-  --shadow-mobile:  0 8px 24px rgba(0, 0, 0, 0.08);
-  --radius-pill:    50px;
-  --radius-sm:      8px;
-  --radius-md:      16px;
-  --radius-lg:      24px;
-  --nav-height:     70px;
-  --transition:     280ms ease-out;
-  --font-sora:      "Sora", "Inter", sans-serif;
-  --font-inter:     "Inter", sans-serif;
+  --bg-white: #ffffff;
+  --shadow-float: 0 4px 32px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.06);
+  --shadow-mobile: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --radius-pill: 50px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --nav-height: 70px;
+  --transition: 280ms ease-out;
+  --font-sora: "Sora", "Inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 html {
@@ -54,4 +56,25 @@ ul {
 
 .demo-section:nth-child(even) {
   background: #f3f6fd;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --brand-blue: #1e6bff;
+    --brand-blue-dk: #0747d8;
+    --text-primary: #111111;
+    --text-secondary: #444444b3;
+    --bg-white: #ffffff;
+    --shadow-float:
+      0 4px 32px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.06);
+    --shadow-mobile: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --radius-pill: 50px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --nav-height: 70px;
+    --transition: 280ms ease-out;
+    --font-sora: "Sora", "Inter", sans-serif;
+    --font-inter: "Inter", sans-serif;
+  }
 }
